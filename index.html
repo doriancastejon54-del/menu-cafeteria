@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafetería Cielo y Miel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Poppins", sans-serif; background: #fffaf310; color: #333; line-height: 1.6; overflow-x: hidden; }
+
+        /* ---------- ENCABEZADO CON VIDEO DE FONDO ---------- */
+        header {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* NOTA: El URL de YouTube proporcionado no es un archivo de video directo (.mp4),
+           por lo que es probable que no se reproduzca como fondo. Deberías usar un
+           link a un archivo de video real. */
+        header video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            filter: brightness(50%) contrast(120%);
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, rgba(231, 166, 92, 0), rgba(162,155,254,0.8));
+            z-index: 1;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            z-index: 2;
+        }
+
+        /* ---------- TÍTULO CON EFECTO DE ESCRITURA ---------- */
+        h1 {
+            position: relative;
+            z-index: 3;
+            font-family: "Dancing Script", cursive;
+            font-size: 3rem;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid rgba(255,255,255,0.8);
+            width: 0;
+            animation: typing 4s steps(35) 0.5s forwards, blink 0.7s infinite;
+            transition: transform 0.3s;
+        }
+
+        h1:hover { transform: scale(1.05); }
+
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
+        @keyframes blink { 0%, 100% { border-color: transparent; } 50% { border-color: rgba(255,255,255,0.8); } }
+
+        /* ---------- SECCIONES DEL MENÚ ---------- */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem 20px;
+            background: linear-gradient(to bottom, #ffeaa7, #fab1a0); /* color alegre de fondo */
+            border-radius: 20px;
+        }
+
+        .section-title {
+            font-family: "Dancing Script", cursive;
+            font-size: 2.2rem;
+            color: #6c5ce7;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            animation: fadeSlide 2s ease;
+        }
+
+        @keyframes fadeSlide { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+
+        .sub-title {
+            font-family: "Dancing Script", cursive;
+            font-size: 1.6rem;
+            color: #e17055;
+            margin: 1rem 0 .8rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .menu-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s, transform 0.5s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+            text-align: center;
+        }
+
+        .menu-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+
+        .menu-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Animación secuencial */
+        .menu-card:nth-child(1) { animation-delay: 0.1s; }
+        .menu-card:nth-child(2) { animation-delay: 0.2s; }
+        .menu-card:nth-child(3) { animation-delay: 0.3s; }
+        .menu-card:nth-child(4) { animation-delay: 0.4s; }
+        .menu-card:nth-child(5) { animation-delay: 0.5s; }
+        .menu-card:nth-child(6) { animation-delay: 0.6s; }
+        .menu-card:nth-child(7) { animation-delay: 0.7s; }
+        .menu-card:nth-child(8) { animation-delay: 0.8s; }
+
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+        .menu-card h4 { margin-bottom: .4rem; color: #2d3436; }
+        .menu-card .meta { font-size: .9rem; color: #777; }
+        .menu-card .price { margin-top: .4rem; color: #e17055; font-weight: 700; }
+        
+        /* Estilos del botón 'Agregar al Carrito' */
+        .add-to-cart {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #a29bfe;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .add-to-cart:hover { background-color: #6c5ce7; }
+        .add-to-cart:active { transform: scale(0.98); }
+
+        /* ---------- CARRITO FLOTANTE Y MODAL ---------- */
+        #cart-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #e17055;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+        #cart-button:hover { background-color: #c7614d; }
+        #cart-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #6c5ce7;
+            color: white;
+            border-radius: 50%;
+            padding: 0.1rem 0.5rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            z-index: 11;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4); /* Fondo semi-transparente */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto; /* 10% desde arriba y centrado */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: modalopen 0.4s;
+        }
+
+        @keyframes modalopen { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        #cart-items {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+        #cart-items li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #eee;
+            padding: 0.5rem 0;
+            font-size: 1rem;
+        }
+        .whatsapp-checkout {
+            width: 100%;
+            padding: 1rem;
+            background-color: #25d366; /* Color de WhatsApp */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        .whatsapp-checkout:hover { background-color: #128c7e; }
+
+
+        /* ---------- PIE DE PÁGINA ---------- */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(to right, #6c5ce7, #a29bfe);
+            color: #fff;
+            margin-top: 2rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <video autoplay muted loop>
+    <source src="https://github.com/doriancastejon54-del/menu-cafeteria/raw/refs/heads/main/cafe%20video.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+</video>
+        <img src="https://i.postimg.cc/xChNKQg2/Gemini-Generated-Image-2qpcdl2qpcdl2qpc.png" alt="Logo Cafetería Cielo y Miel" class="logo">
+        <h1>Cafetería Cielo y Miel</h1>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Nuestro Menú</h2>
+
+        <h3 class="sub-title">Bebidas</h3>
+        <div class="menu-grid">
+            <div class="menu-card" data-name="Café Clásico" data-price="2500">
+                <img src="https://i.postimg.cc/XqRm5rTV/cafe.jpg" alt="Café">
+                <h4>Café</h4>
+                <div class="meta">Clásico y fuerte</div>
+                <div class="price">L20.00</div>
+                <button class="add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="menu-card" data-name="Café con Leche" data-price="3000">
+                <img src="https://i.postimg.cc/XNd8N1Qh/cafe-con-leche.jpg" alt="Café con leche">
+                <h4>Café con leche</h4>
+                <div class="meta">Suave y cremoso</div>
+                <div class="price">L25.00</div>
+                <button class="add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="menu-card" data-name="Chocolate Caliente" data-price="3200">
+                <img src="https://i.postimg.cc/SsBb61MZ/chocolate.jpg" alt="Chocolate caliente">
+                <h4>Chocolate caliente</h4>
+                <div class="meta"></div>
+                <div class="price">L30.00</div>
+                <button class="add-to-cart">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <h3 class="sub-title">Postres</h3>
+        <div class="menu-grid">
+            <div class="menu-card" data-name="Brownie" data-price="3800">
+                <img src="https://i.postimg.cc/HnDFccGn/chisquey.jpg" alt="Brownie">
+                <h4>chiskey</h4>
+                <div class="meta">Chocolate suave</div>
+                <div class="price">L35.00</div>
+                <button class="add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="menu-card" data-name="Flan Casero" data-price="3200">
+                <img src="https://i.postimg.cc/NfQP3wBV/flan.jpg" alt="Flan casero">
+                <h4>Flan casero</h4>
+                <div class="meta">Caramelo suave</div>
+                <div class="price">L20.00</div>
+                <button class="add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="menu-card" data-name="Crepas con Fruta" data-price="4000">
+                <img src="https://i.postimg.cc/mZymN6Cc/crepas.jpg" alt="Crepas">
+                <h4>Crepas</h4>
+                <div class="meta">Rellenas de frutas</div>
+                <div class="price">L25.00</div>
+                <button class="add-to-cart">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <h3 class="sub-title">Pan</h3>
+        <div class="menu-grid">
+            <div class="menu-card" data-name="Pan Dulce (Semita)" data-price="2000">
+                <img src="https://i.postimg.cc/6qMLsght/semita.jpg" alt="Pan dulce">
+                <h4>Pan dulce</h4>
+                <div class="meta">Receta tradicional</div>
+                <div class="price">L10.00</div>
+                <button class="add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="menu-card" data-name="Pan Marquezote" data-price="2200">
+                <img src="https://i.postimg.cc/BQt2LhgH/marquezote.jpg" alt="Pan de mantequilla">
+                <h4>Pan Marquezote</h4>
+                <div class="meta">Suave y esponjoso</div>
+                <div class="price">L15.00</div>
+                <button class="add-to-cart">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2024 Cafetería Cielo y Miel — Todos los derechos reservados
+    </footer>
+
+    <button id="cart-button">
+        🛒<span id="cart-count">0</span>
+    </button>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeCartModal()">&times;</span>
+            <h2>Tu Pedido</h2>
+            <ul id="cart-items">
+                </ul>
+            <p style="font-weight: 600;">Total a pagar: <span id="cart-total">L0.00</span></p>
+            <button class="whatsapp-checkout" onclick="checkoutWhatsApp()">Cerrar Compra (WhatsApp)</button>
+        </div>
+    </div>
+
+    <script>
+        // Array para almacenar los productos del carrito
+        let cart = [];
+        const WHATSAPP_NUMBER = '50495358772';
+
+        // Elementos del DOM
+        const cartCountEl = document.getElementById('cart-count');
+        const cartModalEl = document.getElementById('cart-modal');
+        const cartItemsEl = document.getElementById('cart-items');
+        const cartTotalEl = document.getElementById('cart-total');
+        const cartButtonEl = document.getElementById('cart-button');
+
+        // Inicializar event listeners
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const card = event.target.closest('.menu-card');
+                const name = card.dataset.name;
+                // El precio está en Lempiras * 100 para evitar problemas con decimales (L2500 en lugar de L2.50)
+                const priceCents = parseInt(card.dataset.price); 
+                addToCart(name, priceCents);
+            });
+        });
+
+        cartButtonEl.addEventListener('click', openCartModal);
+
+        // Cierra el modal al hacer clic fuera de él
+        window.onclick = function(event) {
+            if (event.target == cartModalEl) {
+                closeCartModal();
+            }
+        }
+
+        // --- Funciones del Carrito ---
+
+        function formatPrice(priceCents) {
+            // Convierte el precio de centavos (e.g., 2500) a formato L.X.XXX (e.g., L2.500)
+            const lempiras = (priceCents / 100).toFixed(2);
+            return `L${lempiras.replace('.', ',')}`;
+        }
+
+        function addToCart(name, priceCents) {
+            const existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name: name, price: priceCents, quantity: 1 });
+            }
+
+            updateCartDisplay();
+            // Abrir el modal automáticamente después de agregar
+            openCartModal(); 
+        }
+
+        function updateCartDisplay() {
+            cartItemsEl.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const listItem = document.createElement('li');
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+
+                listItem.innerHTML = `
+                    <span>${item.quantity} x ${item.name}</span>
+                    <span>${formatPrice(subtotal)}</span>
+                `;
+                cartItemsEl.appendChild(listItem);
+            });
+
+            cartCountEl.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartTotalEl.textContent = formatPrice(total);
+
+            // Mostrar el botón flotante solo si hay items
+            cartButtonEl.style.display = cart.length > 0 ? 'block' : 'none';
+        }
+
+        function openCartModal() {
+            updateCartDisplay();
+            cartModalEl.style.display = 'block';
+        }
+
+        function closeCartModal() {
+            cartModalEl.style.display = 'none';
+        }
+
+        // --- Función de Checkout a WhatsApp ---
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                alert("Tu carrito está vacío. Por favor, añade productos antes de cerrar la compra.");
+                return;
+            }
+
+            let orderSummary = "¡Hola! Me gustaría hacer el siguiente pedido de *Cafetería Cielo y Miel*:\n\n";
+            let total = 0;
+
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                orderSummary += `* ${item.quantity} x ${item.name} (${formatPrice(item.price)} c/u) - Subtotal: ${formatPrice(subtotal)}\n`;
+            });
+
+            orderSummary += `\n*TOTAL A PAGAR: ${formatPrice(total)}*\n\n`;
+            orderSummary += `Gracias por elegir nuestra cafetería`;
+
+            // Codificar el mensaje para que sea válido en el URL
+            const whatsappText = encodeURIComponent(orderSummary);
+            
+            // Generar el link de WhatsApp
+            const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappText}`;
+            
+            // Redirigir al usuario
+            window.open(whatsappLink, '_blank');
+            
+            // Opcional: limpiar el carrito después de enviar el pedido
+            cart = [];
+            updateCartDisplay();
+            closeCartModal();
+        }
+
+        // Inicializar la vista del carrito
+        updateCartDisplay(); 
+    </script>
+</body>
+</html>
