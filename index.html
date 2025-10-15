@@ -1,13 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cafetería Cielo y Miel</title>
+    <title>Cafetería Cielo y Miel - BTPI 2025 | Café, Código y Comunidad</title>
+    
+    <!-- Meta tags SEO -->
+    <meta name="description" content="Cafetería estudiantil del Instituto Gubernamental Polivalente Villa de San Francisco. Proyecto BTPI 2025 que fusiona café, código y comunidad." />
+    <meta name="keywords" content="cafetería, café, BTPI, instituto, estudiantes, Villa de San Francisco, código, comunidad" />
+    <meta name="author" content="Estudiantes 12º BTPI 2025" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cafetería Cielo y Miel - BTPI 2025" />
+    <meta property="og:description" content="Café, Código y Comunidad. Tu momento de recargar el día en el Instituto." />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Cafetería Cielo y Miel - BTPI 2025" />
+    <meta property="twitter:description" content="Café, Código y Comunidad. Tu momento de recargar el día en el Instituto." />
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: "Poppins", sans-serif; background: #fffaf310; color: #333; line-height: 1.6; overflow-x: hidden; }
+        body { font-family: "Poppins", sans-serif; background: #fffaf3; color: #333; line-height: 1.6; overflow-x: hidden; }
 
         /* ---------- ENCABEZADO CON VIDEO DE FONDO ---------- */
         header {
@@ -22,9 +38,6 @@
             align-items: center;
         }
 
-        /* NOTA: El URL de YouTube proporcionado no es un archivo de video directo (.mp4),
-           por lo que es probable que no se reproduzca como fondo. Deberías usar un
-           link a un archivo de video real. */
         header video {
             position: absolute;
             top: 0;
@@ -79,7 +92,7 @@
             max-width: 1000px;
             margin: 2rem auto;
             padding: 2rem 20px;
-            background: linear-gradient(to bottom, #ffeaa7, #fab1a0); /* color alegre de fondo */
+            background: linear-gradient(to bottom, #ffeaa7, #fab1a0);
             border-radius: 20px;
         }
 
@@ -192,7 +205,7 @@
         }
 
         .modal {
-            display: none; /* Oculto por defecto */
+            display: none;
             position: fixed;
             z-index: 11;
             left: 0;
@@ -200,12 +213,12 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.4); /* Fondo semi-transparente */
+            background-color: rgba(0,0,0,0.4);
         }
 
         .modal-content {
             background-color: #fefefe;
-            margin: 10% auto; /* 10% desde arriba y centrado */
+            margin: 10% auto;
             padding: 20px;
             border: 1px solid #888;
             width: 90%;
@@ -246,7 +259,7 @@
         .whatsapp-checkout {
             width: 100%;
             padding: 1rem;
-            background-color: #25d366; /* Color de WhatsApp */
+            background-color: #25d366;
             color: white;
             border: none;
             border-radius: 8px;
@@ -257,7 +270,6 @@
             transition: background-color 0.3s;
         }
         .whatsapp-checkout:hover { background-color: #128c7e; }
-
 
         /* ---------- PIE DE PÁGINA ---------- */
         footer {
@@ -274,13 +286,115 @@
 
     <header>
         <video autoplay muted loop>
-    <source src="https://github.com/doriancastejon54-del/menu-cafeteria/raw/refs/heads/main/cafe%20video.mp4" type="video/mp4">
-    Tu navegador no soporta video.
-</video>
+            <source src="https://res.cloudinary.com/duqwsj47u/video/upload/v1760212400/cafe_video_ei450b.mp4" type="video/mp4">
+            Tu navegador no soporta video.
+        </video>
         <img src="https://i.postimg.cc/xChNKQg2/Gemini-Generated-Image-2qpcdl2qpcdl2qpc.png" alt="Logo Cafetería Cielo y Miel" class="logo">
         <h1>Cafetería Cielo y Miel</h1>
     </header>
 
+    <!-- ========================================================= -->
+    <!-- INFORMACIÓN DEL PROYECTO BTPI 2025                        -->
+    <!-- ========================================================= -->
+    <div style="max-width: 1000px; margin: 2rem auto; padding: 0 20px;">
+        
+        <!-- Equipo BTPI 2025 -->
+        <section style="background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <h2 style="font-family: 'Dancing Script', cursive; font-size: 2rem; color: #6c5ce7; text-align: center; margin-bottom: 1.5rem;">Equipo BTPI 2025</h2>
+            <p style="margin-bottom: 1rem; color: #333; text-align: center;"><strong>8 sueños en acción - Proyecto Cielo y Miel</strong></p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; margin-top: 1rem;">
+                <div style="background: linear-gradient(45deg, #6c5ce7, #a29bfe); color: white; padding: 0.5rem; border-radius: 8px; font-weight: 600;">Daysi Avila</div>
+                <div style="background: linear-gradient(45deg, #6c5ce7, #a29bfe); color: white; padding: 0.5rem; border-radius: 8px; font-weight: 600;">Sindy Martinez</div>
+                <div style="background: linear-gradient(45deg, #6c5ce7, #a29bfe); color: white; padding: 0.5rem; border-radius: 8px; font-weight: 600;">Adyari Quezada</div>
+                <div style="background: linear-gradient(45deg, #6c5ce7, #a29bfe); color: white; padding: 0.5rem; border-radius: 8px; font-weight: 600;">Dorian Nehemias</div>
+                <div style="background: linear-gradient(45deg, #e17055, #fab1a0); color: white; padding: 0.5rem; border-radius: 8px; font-weight: 600;">Jefferson Medina</div>
+                <div style="background: linear-gradient(45deg, #e17055, #fab1a0); color: white; padding: 0.5rem; border-radius: 8px; font-weight: 600;">Carlos Flores</div>
+                <div style="background: linear-gradient(45deg, #e17055, #fab1a0); color: white; padding: 0.5rem; border-radius: 8px; font-weight: 600;">Wilson Bran</div>
+                <div style="background: linear-gradient(45deg, #e17055, #fab1a0); color: white; padding: 0.5rem; border-radius: 8px; font-weight: 600;">Emil Velasquez</div>
+            </div>
+            <p style="margin-top: 1rem; font-style: italic; color: #666; text-align: center;">"Soñamos con código, creamos con corazón. Esta es nuestra huella en el 2025."</p>
+        </section>
+
+        <!-- Concepto Central -->
+        <section style="background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <h2 style="font-family: 'Dancing Script', cursive; font-size: 2rem; color: #6c5ce7; text-align: center; margin-bottom: 1.5rem;">Concepto Central de Marca y Propuesta de Valor</h2>
+            <p style="margin-bottom: 1rem; line-height: 1.7;"><strong>Identidad Principal:</strong> "Café, Código y Comunidad." Proyecto del <strong>12.º BTPI (2025)</strong> que une negocio real y habilidades técnicas.</p>
+            <div style="font-style: italic; color: #e17055; text-align: center; margin: 1.5rem 0; background: #fff3e0; padding: 1.2rem; border-left: 5px solid #e17055; border-radius: 8px;">"La vida es como una taza de café: todo depende de cómo la preparas. En Cielo y Miel, ¡la preparamos con pasión y tecnología!"</div>
+            <p style="margin-bottom: 1rem; line-height: 1.7;"><strong>Propuesta de Valor:</strong> Único punto de café dentro del Instituto, ofreciendo un <em>Momento de Recarga</em> eficiente.</p>
+            <div style="font-style: italic; color: #e17055; text-align: center; margin: 1.5rem 0; background: #fff3e0; padding: 1.2rem; border-left: 5px solid #e17055; border-radius: 8px;">"Somos 8 sueños en acción. Cada postre que vendemos es la prueba de que el código y el café pueden cambiar el mundo."</div>
+            <p style="margin-bottom: 1rem; line-height: 1.7;"><strong>Tono de Comunicación:</strong> Profesional y juvenil, promoviendo energía y compañerismo.</p>
+            <div style="font-style: italic; color: #e17055; text-align: center; margin: 1.5rem 0; background: #fff3e0; padding: 1.2rem; border-left: 5px solid #e17055; border-radius: 8px;">"Aquí no solo recargas el día, recargas tus ideas."</div>
+        </section>
+
+        <!-- Posicionamiento y Operación -->
+        <section style="background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <h2 style="font-family: 'Dancing Script', cursive; font-size: 2rem; color: #6c5ce7; text-align: center; margin-bottom: 1.5rem;">Posicionamiento y Operación</h2>
+            <p style="margin-bottom: 1rem; line-height: 1.7;"><strong>Ubicación:</strong> Dentro del Instituto Gubernamental Polivalente Villa de San Francisco.</p>
+            <div style="font-style: italic; color: #e17055; text-align: center; margin: 1.5rem 0; background: #fff3e0; padding: 1.2rem; border-left: 5px solid #e17055; border-radius: 8px;">"No tienes que ir lejos para encontrar la paz. Estamos justo aquí, en tu I.G.P."</div>
+            <p style="margin-bottom: 1rem; line-height: 1.7;"><strong>Horario:</strong> Lunes a Viernes, de <strong>12:00 PM a 5:00 PM</strong>.</p>
+            <div style="font-style: italic; color: #e17055; text-align: center; margin: 1.5rem 0; background: #fff3e0; padding: 1.2rem; border-left: 5px solid #e17055; border-radius: 8px;">"Cuando el reloj marca las 12, sabemos que necesitas energía."</div>
+            <p style="margin-bottom: 1rem; line-height: 1.7;"><strong>Operación Estudiantil Eficiente:</strong> Uso de web para pedidos rápidos y modernos.</p>
+            <div style="font-style: italic; color: #e17055; text-align: center; margin: 1.5rem 0; background: #fff3e0; padding: 1.2rem; border-left: 5px solid #e17055; border-radius: 8px;">"Detrás de cada servicio rápido, hay un algoritmo inteligente."</div>
+        </section>
+
+        <!-- Historia y Legado -->
+        <section style="background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <h2 style="font-family: 'Dancing Script', cursive; font-size: 2rem; color: #6c5ce7; text-align: center; margin-bottom: 1.5rem;">Historia y Legado BTPI</h2>
+            
+            <h3 style="font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: #e17055; margin-bottom: 1rem;">La Historia de Origen: "De la Teoría al Café: El Nacimiento en el Aula del 12.º BTPI"</h3>
+            
+            <p style="margin-bottom: 1rem; line-height: 1.7;">Cielo y Miel no fue una idea de un día, sino el resultado directo de una sesión de brainstorming en el aula de Informática a inicios de 2025. Como requisito final del Bachillerato Técnico Profesional en Informática (BTPI), el desafío era ambicioso: aplicar nuestros conocimientos de código, redes y gestión en un modelo de negocio operativo.</p>
+            
+            <p style="margin-bottom: 1rem; line-height: 1.7;">El proyecto comenzó con una simple pregunta en clase: <strong>"¿Qué puedes traer al colegio?"</strong></p>
+            
+            <p style="margin-bottom: 1rem; line-height: 1.7;">Los 8 fundadores—Daysi Ávila, Sindy Martínez, Adyari Quezada, Dorian Nehemías, Jefferson Medina, Carlos Flores, Wilson Bran y Emil Velásquez—formaron el equipo. Cada uno aportó una pieza clave del concepto durante esa hora de clase:</p>
+            
+            <ul style="padding-left: 1.5rem; margin-bottom: 1rem;">
+                <li style="margin-bottom: 0.8rem; line-height: 1.7;"><strong>La Necesidad:</strong> Los estudiantes y docentes de la jornada vespertina necesitaban un punto de energía entre las 12 PM y las 5 PM.</li>
+                <li style="margin-bottom: 0.8rem; line-height: 1.7;"><strong>La Idea de Negocio:</strong> La necesidad de café, postres y un espacio de 'recarga' que nos hiciera sentir fuera de las paredes del aula.</li>
+                <li style="margin-bottom: 0.8rem; line-height: 1.7;"><strong>La Tecnología:</strong> El acuerdo de que el negocio sería una demostración viva de nuestro currículo de informática: desde la gestión de inventario hasta la página web que hoy ves.</li>
+            </ul>
+            
+            <p style="margin-bottom: 1rem; line-height: 1.7;">El nombre <strong>'Cielo y Miel'</strong> surgió como un consenso de lo que queríamos ofrecer: lo dulce (la Miel de los postres) y lo aspiracional (el Cielo, que representa la pausa y la visión de futuro).</p>
+            
+            <p style="margin-bottom: 1rem; line-height: 1.7;">Hoy, 'Cielo y Miel' es la materialización de esa hora de clase. Es un esfuerzo colaborativo donde Dorian, Jefferson y Carlos lideran el desarrollo de la infraestructura digital; mientras que Daysi, Sindy y Adyari definen la gestión de la marca y la experiencia del cliente; y Wilson y Emil se enfocan en la logística y la eficiencia operativa.</p>
+            
+            <p style="margin-bottom: 1rem; line-height: 1.7;">Cada compra apoya directamente a estos 8 alumnos a graduarse con una experiencia de negocio real, demostrando que en el I.G.P. Villa de San Francisco, el código y la creatividad se sirven en cada taza.</p>
+            
+            <div style="font-style: italic; color: #e17055; text-align: center; margin: 1.5rem 0; background: #fff3e0; padding: 1.2rem; border-left: 5px solid #e17055; border-radius: 8px;">
+                <strong>Frase Motivacional de Creación:</strong><br>
+                "Soñamos con código en la clase, y lo construimos en el recreo. Cielo y Miel es la prueba de que las mejores ideas nacen justo donde el aprendizaje es real."
+            </div>
+            
+            <p style="margin-bottom: 1rem; line-height: 1.7;"><strong>Legado Tecnológico:</strong> Página web modular para futuras generaciones BTPI.</p>
+            <div style="font-style: italic; color: #e17055; text-align: center; margin: 1.5rem 0; background: #fff3e0; padding: 1.2rem; border-left: 5px solid #e17055; border-radius: 8px;">"Soñamos con código, creamos con corazón. Esta es nuestra huella en el 2025."</div>
+        </section>
+
+        <!-- Conceptos Técnicos -->
+        <section style="background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <h2 style="font-family: 'Dancing Script', cursive; font-size: 2rem; color: #6c5ce7; text-align: center; margin-bottom: 1.5rem;">Conceptos Técnicos y Funcionales</h2>
+            <ul style="padding-left: 1.5rem;">
+                <li style="margin-bottom: 0.8rem; line-height: 1.7;">Diseño <strong>responsivo</strong> para celulares.</li>
+                <li style="margin-bottom: 0.8rem; line-height: 1.7;">Optimización <strong>SEO local</strong>.</li>
+                <li style="margin-bottom: 0.8rem; line-height: 1.7;">Simulación de <strong>datos dinámicos</strong>.</li>
+                <li style="margin-bottom: 0.8rem; line-height: 1.7;">Canal de <strong>feedback digital</strong> para mejoras.</li>
+            </ul>
+        </section>
+
+        <!-- Frases Inspiradoras -->
+        <section style="background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <h2 style="font-family: 'Dancing Script', cursive; font-size: 2rem; color: #6c5ce7; text-align: center; margin-bottom: 1.5rem;">Frases Inspiradoras</h2>
+            <div style="font-style: italic; color: #e17055; text-align: center; margin: 1.5rem 0; background: #fff3e0; padding: 1.2rem; border-left: 5px solid #e17055; border-radius: 8px;">"Tu Momento de Recargar el Día. Creemos en ti, creemos en el café."</div>
+            <div style="font-style: italic; color: #e17055; text-align: center; margin: 1.5rem 0; background: #fff3e0; padding: 1.2rem; border-left: 5px solid #e17055; border-radius: 8px;">"Aquí las ideas fluyen tan libremente como nuestro café."</div>
+            <div style="font-style: italic; color: #e17055; text-align: center; margin: 1.5rem 0; background: #fff3e0; padding: 1.2rem; border-left: 5px solid #e17055; border-radius: 8px;">"Hecho por estudiantes, pensado para la excelencia. Apoya el proyecto BTPI 2025."</div>
+            <div style="font-style: italic; color: #e17055; text-align: center; margin: 1.5rem 0; background: #fff3e0; padding: 1.2rem; border-left: 5px solid #e17055; border-radius: 8px;">"Elige tu combustible para el éxito. ¡Pide tu Recarga Hoy!"</div>
+        </section>
+
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- MENÚ DE LA CAFETERÍA                                       -->
+    <!-- ========================================================= -->
     <div class="container">
         <h2 class="section-title">Nuestro Menú</h2>
 
@@ -303,7 +417,7 @@
             <div class="menu-card" data-name="Chocolate Caliente" data-price="3200">
                 <img src="https://i.postimg.cc/SsBb61MZ/chocolate.jpg" alt="Chocolate caliente">
                 <h4>Chocolate caliente</h4>
-                <div class="meta"></div>
+                <div class="meta">Dulce y reconfortante</div>
                 <div class="price">L30.00</div>
                 <button class="add-to-cart">Agregar al Carrito</button>
             </div>
@@ -313,7 +427,7 @@
         <div class="menu-grid">
             <div class="menu-card" data-name="Brownie" data-price="3800">
                 <img src="https://i.postimg.cc/HnDFccGn/chisquey.jpg" alt="Brownie">
-                <h4>chiskey</h4>
+                <h4>Chiskey</h4>
                 <div class="meta">Chocolate suave</div>
                 <div class="price">L35.00</div>
                 <button class="add-to-cart">Agregar al Carrito</button>
@@ -353,8 +467,9 @@
         </div>
     </div>
 
-    <footer>
-        © 2024 Cafetería Cielo y Miel — Todos los derechos reservados
+    <footer style="text-align: center; padding: 2rem 1rem; background: linear-gradient(to right, #6c5ce7, #a29bfe); color: white; margin-top: 2rem; font-weight: 500;">
+        <p>© 2025 Cafetería Cielo y Miel — Proyecto Final BTPI 12.º</p>
+        <p>Hecho por estudiantes, pensado para la excelencia.</p>
     </footer>
 
     <button id="cart-button">
@@ -389,7 +504,6 @@
             button.addEventListener('click', (event) => {
                 const card = event.target.closest('.menu-card');
                 const name = card.dataset.name;
-                // El precio está en Lempiras * 100 para evitar problemas con decimales (L2500 en lugar de L2.50)
                 const priceCents = parseInt(card.dataset.price); 
                 addToCart(name, priceCents);
             });
@@ -407,7 +521,6 @@
         // --- Funciones del Carrito ---
 
         function formatPrice(priceCents) {
-            // Convierte el precio de centavos (e.g., 2500) a formato L.X.XXX (e.g., L2.500)
             const lempiras = (priceCents / 100).toFixed(2);
             return `L${lempiras.replace('.', ',')}`;
         }
@@ -422,7 +535,6 @@
             }
 
             updateCartDisplay();
-            // Abrir el modal automáticamente después de agregar
             openCartModal(); 
         }
 
@@ -445,7 +557,6 @@
             cartCountEl.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
             cartTotalEl.textContent = formatPrice(total);
 
-            // Mostrar el botón flotante solo si hay items
             cartButtonEl.style.display = cart.length > 0 ? 'block' : 'none';
         }
 
@@ -478,16 +589,11 @@
             orderSummary += `\n*TOTAL A PAGAR: ${formatPrice(total)}*\n\n`;
             orderSummary += `Gracias por elegir nuestra cafetería`;
 
-            // Codificar el mensaje para que sea válido en el URL
             const whatsappText = encodeURIComponent(orderSummary);
-            
-            // Generar el link de WhatsApp
             const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappText}`;
             
-            // Redirigir al usuario
             window.open(whatsappLink, '_blank');
             
-            // Opcional: limpiar el carrito después de enviar el pedido
             cart = [];
             updateCartDisplay();
             closeCartModal();
